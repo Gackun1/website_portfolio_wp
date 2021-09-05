@@ -1,0 +1,22 @@
+.ttl-02 {
+  font-size: 2.8rem;
+}
+
+.ttl-03 {
+  font-size: 2rem;
+}
+
+@for $i from 1 through 10 {
+  .mt-#{$i}0 {
+    margin-top: $i * 1rem;
+  }
+  .mb-#{$i}0 {
+    margin-bottom: $i * 1rem;
+  }
+  .mr-#{$i}0 {
+    margin-right: $i * 1rem;
+  }
+  .ml-#{$i}0 {
+    margin-left: $i * 1rem;
+  }
+}

@@ -1,0 +1,30 @@
+#breadcrumb {
+  white-space: nowrap;
+  overflow: auto hidden;
+  .list {
+    list-style: none;
+    display: flex;
+    &__item {
+      position: relative;
+      a,
+      span {
+        font-size: 1.4rem;
+      }
+      a {
+        color: $blue;
+        text-decoration: none;
+      }
+      & + .list__item {
+        margin: 0 0 0 2rem;
+      }
+      &:not(:last-child)::after {
+        content: ">";
+        font-size: 1.4rem;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(180%, -50%);
+      }
+    }
+  }
+}

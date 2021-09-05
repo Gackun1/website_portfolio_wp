@@ -1,0 +1,27 @@
+@import "css/_default";
+@import "css/_utility";
+@import "css/_color";
+@import "css/_header";
+@import "css/_footer";
+@import "css/_breadcrumb";
+@import "css/_button";
+@import "css/_archive-button";
+@import "css/_single-button";
+/*
+Theme Name: Gackun portfolio
+Theme URl: テーマのURL
+Author: Gackun
+Description: テーマの説明
+tags: テーマのタグ
+License: テーマのライセンス
+License URl: テーマのライセンスURL
+Version: バージョン
+*/
+
+.site-content {
+  .inner {
+    max-width: 128rem;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+}
