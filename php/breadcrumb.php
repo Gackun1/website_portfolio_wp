@@ -8,7 +8,7 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
     echo '<div id="breadcrumb" class="mb-20">'.  //id名などは任意で
       '<ul class="list">'.
         '<li class="list__item">'.
-          '<a href="'. esc_url( home_url() ) .'"><span>ホーム</span></a>'.
+          '<a href="'. esc_url( home_url() ) .'/"><span>ホーム</span></a>'.
         '</li>';
     if ( is_attachment() ) {
       /**

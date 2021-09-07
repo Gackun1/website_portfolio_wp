@@ -32,8 +32,8 @@
         <nav>
           <ul class="header__nav">
             <li class="header__nav--item"><a href="<?= home_url();?>/">ホーム</a></li>
-            <li class="header__nav--item"><a href="<?= home_url();?>/button">ボタン一覧</a></li>
-            <li class="header__nav--item"></li>
+            <li class="header__nav--item"><a href="<?= home_url();?>/button">ボタンデザイン</a></li>
+            <li class="header__nav--item"><a href="<?= home_url();?>/blog">ブログ</a></li>
           </ul>
         </nav>
       </div>
