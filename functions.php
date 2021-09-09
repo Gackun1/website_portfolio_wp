@@ -106,7 +106,7 @@ function change_posts_per_page($query) {
   }
   if ( $query->is_archive('blog') ) { //カスタム投稿タイプを指定
     $query->set( 'posts_per_page', '20' ); //表示件数を指定
-}
+  }
 }
 add_action( 'pre_get_posts', 'change_posts_per_page' );
 
