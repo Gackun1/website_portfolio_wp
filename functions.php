@@ -61,9 +61,10 @@ function create_post_type_by_button() {
     'label' => 'カテゴリー',
     'public' => true,
     'show_ui' => true,
-    // 'hierarchical' => true,
+    'hierarchical' => true,
     'query_var'=> true,
-    'rewrite' => ['slug' => 'button_cat', 'with_front' => false]
+    'rewrite' => ['slug' => 'button_cat', 'with_front' => false],
+    'show_in_rest' => true,
   ];
   register_taxonomy('button_cat','button',$tax_args);
 }
@@ -92,9 +93,42 @@ function create_post_type_by_blog() {
     'public' => true,
     'show_ui' => true,
     'query_var'=> true,
-    'rewrite' => ['slug' => 'blog_cat', 'with_front' => false]
+    'hierarchical' => true,
+    'rewrite' => ['slug' => 'blog_cat', 'with_front' => false],
+    'show_in_rest' => true,
   ];
   register_taxonomy('blog_cat','blog',$tax_args);
+}
+
+add_action('init', 'create_post_type_by_portfolio');
+function create_post_type_by_portfolio() {
+  $args = array(
+    'label' => 'ポートフォリオ',
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'has_archive' => true,
+    'capability_type' => 'post',
+    'menu_position' => 5,
+    'supports' => ['title','editor','thumbnail','revisions'],
+    'rewrite' => ['slug' => 'portfolio', 'with_front' => false],
+    'menu_icon' => 'dashicons-format-aside',
+    'show_in_rest' => true,
+  );
+  register_post_type('portfolio',$args);
+  //分類を追加
+  $tax_args = [
+    'label' => 'カテゴリー',
+    'public' => true,
+    'show_ui' => true,
+    'query_var'=> true,
+    'hierarchical' => true,
+    'rewrite' => ['slug' => 'portfolio_cat', 'with_front' => false],
+    'show_in_rest' => true,
+  ];
+  register_taxonomy('portfolio_cat','portfolio',$tax_args);
 }
 
 //カスタム投稿 一覧ページの表示数

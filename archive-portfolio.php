@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<h1 class="ttl-01">Blog</h1>
+<h1 class="ttl-01">Portfolio</h1>
 
 <section class="section">
   <div class="post-list">
@@ -23,11 +23,8 @@
     }
     $post_link = get_permalink($post->ID);
     $img_link = get_the_post_thumbnail_url($post->ID, 'medium');
-    if(!$img_link){
-      $img_link = get_template_directory_uri().'/images/logo-a-500x342.png';
-    }
-    $terms = get_the_terms($post->ID, 'blog_cat');
-    $post_type_link = esc_url(get_post_type_archive_link('blog'));
+    $terms = get_the_terms($post->ID, 'portfolio_cat');
+    $post_type_link = esc_url(get_post_type_archive_link('portfolio'));
   ?>
 
     <!-- post item -->
@@ -48,7 +45,6 @@
         </ul>
 
         <p class="blog-entries__txt"><?= $content; ?></p>
-        <a href="<?= $post_link; ?>">>続きを読む</a>
       </div>
     </article>
     <!-- end of post item -->

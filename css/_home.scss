@@ -1,3 +1,4 @@
+//top
 .home-top {
   &__ttl {
     font-size: 8rem;
@@ -5,52 +6,109 @@
     display: flex;
     flex-direction: column;
   }
-  &__subttl{
+  &__subttl {
     font-size: 5rem;
     display: block;
   }
-  &__mainttl{
+  &__mainttl {
     display: block;
   }
 }
 
-.home-section {
-  padding: 5rem 0;
-  .pure-btn {
-    margin: 3rem auto 0 auto;
-    display: flex;
-    width: fit-content;
-  }
-}
-
-.home-blog {
-  &__ttl{
-    font-size: 4rem;
-  }
-}
-
+//blog
 .blog-entries {
-  a{
+  a {
     display: block;
   }
-  &__item{
+  &__item {
     display: flex;
     align-items: flex-start;
     padding: 2rem 0;
     & + & {
       border-top: solid 2px #e7e7e7;
     }
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
-  &__img{
+  &__img {
     width: 25rem;
+    background: #f9f9f9;
   }
-  &__ttl{
+  &__ttl {
     font-size: 2.4rem;
   }
-  &__txtbox{
+  &__txtbox {
     padding: 0 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+  }
+}
+
+//portfolio
+.portfolio-entries {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3vw;
+  a {
+    display: block;
+    padding-top: 100%;
+    background: #00000000;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      background: #00000088;
+      .portfolio-entries__ttl--hover {
+        opacity: 1;
+      }
+    }
+  }
+  &__item {
+    width: calc(100% / 3 - 2.2vw);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      background-size: 105% 105%;
+    }
+  }
+  &__ttl--hover {
+    font-size: 1.6rem;
+    font-weight: normal;
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(0, -50%);
+    color: #fff;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  &__txtbox {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+  &__date {
+    font-size: 1.4rem;
+  }
+  .category-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    &__item {
+      background: #fff;
+      margin: 1rem;
+      padding: 0.1rem 0.5rem;
+      font-size: 1.4rem;
+    }
   }
 }

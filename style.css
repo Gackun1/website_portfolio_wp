@@ -19,6 +19,7 @@ html {
           box-sizing: border-box;
   font-size: 62.5%;
   font-family: "NotoSansJP-Regular", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  letter-spacing: 0.1rem;
 }
 
 body {
@@ -35,7 +36,8 @@ pre {
   max-width: 100vw;
 }
 
-p, a {
+p,
+a {
   font-size: 1.6rem;
   text-decoration: none;
   color: #333;
@@ -213,6 +215,35 @@ p, a {
   margin-left: 10rem;
 }
 
+.section {
+  padding: 5rem 0;
+}
+
+.section .center-btn {
+  margin: 3rem auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 2px;
+  border: solid 1px #333;
+}
+
+.section__ttl {
+  font-size: 4rem;
+  padding: 0 0 2rem 0;
+}
+
+.section__ol {
+  list-style-position: inside;
+}
+
+.section__ol-item {
+  font-size: 1.6rem;
+}
+
 .header {
   height: auto;
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -362,24 +393,6 @@ p, a {
   display: block;
 }
 
-.home-section {
-  padding: 5rem 0;
-}
-
-.home-section .pure-btn {
-  margin: 3rem auto 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.home-blog__ttl {
-  font-size: 4rem;
-}
-
 .blog-entries a {
   display: block;
 }
@@ -398,8 +411,17 @@ p, a {
   border-top: solid 2px #e7e7e7;
 }
 
+.blog-entries__item:first-child {
+  padding-top: 0;
+}
+
+.blog-entries__item:last-child {
+  padding-bottom: 0;
+}
+
 .blog-entries__img {
   width: 25rem;
+  background: #f9f9f9;
 }
 
 .blog-entries__ttl {
@@ -417,6 +439,91 @@ p, a {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.portfolio-entries {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 3vw;
+}
+
+.portfolio-entries a {
+  display: block;
+  padding-top: 100%;
+  background: #00000000;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.portfolio-entries a:hover {
+  background: #00000088;
+}
+
+.portfolio-entries a:hover .portfolio-entries__ttl--hover {
+  opacity: 1;
+}
+
+.portfolio-entries__item {
+  width: calc(100% / 3 - 2.2vw);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  position: relative;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.portfolio-entries__item:hover {
+  background-size: 105% 105%;
+}
+
+.portfolio-entries__ttl--hover {
+  font-size: 1.6rem;
+  font-weight: normal;
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.portfolio-entries__txtbox {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.portfolio-entries__date {
+  font-size: 1.4rem;
+}
+
+.portfolio-entries .category-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.portfolio-entries .category-list__item {
+  background: #fff;
+  margin: 1rem;
+  padding: 0.1rem 0.5rem;
+  font-size: 1.4rem;
 }
 
 .pure-btn {
@@ -950,8 +1057,8 @@ p, a {
   margin: 1rem 1rem 0 1rem;
   border-radius: 10rem;
   background: #fff;
-  -webkit-box-shadow: 2px 2px 4px #bbb;
-          box-shadow: 2px 2px 4px #bbb;
+  -webkit-box-shadow: 1px 1px 3px #bbb;
+          box-shadow: 1px 1px 3px #bbb;
   font-size: 1.4rem;
   color: #333;
   text-decoration: none;
