@@ -24,11 +24,11 @@ add_theme_support('post-thumbnails');
 
 // メインクエリのカスタマイズ
 //トップページの記事一覧の表示件数を5件に
-function custom_main_query($query){
-    if(is_admin() || ! $query->is_main_query()):
+function custom_main_query($query) {
+    if (is_admin() || ! $query->is_main_query()):
         return;
     endif;
-    if($query->is_home()):
+    if ($query->is_home()):
         $query->set('posts_per_page',5);
     endif;
 }
