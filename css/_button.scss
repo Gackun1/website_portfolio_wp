@@ -98,7 +98,7 @@
     border-top: solid 2px #333;
     border-right: solid 2px #333;
     transform: rotate(45deg) translate(0, 66%);
-    transition: 0.3s;
+    transition: all 0.3s;
   }
   &:hover {
     background: #333;
@@ -121,7 +121,7 @@
       border-top: solid 2px #333;
       border-right: solid 2px #333;
       transform: rotate(45deg) translate(0, 66%);
-      transition: 0.3s;
+      transition: all 0.3s;
     }
     &:hover {
       background: #333;
@@ -143,7 +143,7 @@
     right: 1.5rem;
     bottom: 50%;
     transform: rotate(45deg) translate(0, 66%);
-    transition: 0.3s;
+    transition: all 0.3s;
   }
   &:before {
     right: 0.1rem;
@@ -180,7 +180,7 @@
       right: 1.5rem;
       bottom: 50%;
       transform: rotate(45deg) translate(0, 66%);
-      transition: 0.3s;
+      transition: all 0.3s;
     }
     &:before {
       right: 0.1rem;

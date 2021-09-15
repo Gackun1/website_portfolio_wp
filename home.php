@@ -13,7 +13,7 @@
 
 <!-- tecblog -->
 <section class="section home-blog">
-  <h2 class="section__ttl">Blog</h2>
+  <h2 class="section__ttl">BLOG</h2>
 
   <?php
     $post;
@@ -28,25 +28,25 @@
     <?php foreach($myposts  as $post) : setup_postdata($post); ?>
 
     <?php
-    $title;
-    if (mb_substr($post->post_title, 'UTF-8') > 50) {
-      $title = mb_substr($post->post_title, 0, 50, 'UTF-8') . '...';
-    } else {
-      $title = $post->post_title;
-    }
-    $content;
-    if (mb_strlen($post->post_content, 'UTF-8') > 150) {
-      $content = str_replace('\n', '', mb_substr(strip_tags($post-> post_content), 0, 150,'UTF-8')) . '...';
-    } else {
-      $content = str_replace('\n', '', strip_tags($post->post_content));
-    }
-    $post_link = get_permalink($post->ID);
-    $img_link = get_the_post_thumbnail_url($post->ID, 'medium');
-    if (!$img_link) {
-      $img_link = get_template_directory_uri().'/images/logo-a-500x342.png';
-    }
-    $terms = get_the_terms($post->ID, 'blog_cat');
-    $post_type_link = esc_url(get_post_type_archive_link('blog'));
+      $title;
+      if (mb_substr($post->post_title, 'UTF-8') > 50) {
+        $title = mb_substr($post->post_title, 0, 50, 'UTF-8') . '...';
+      } else {
+        $title = $post->post_title;
+      }
+      $content;
+      if (mb_strlen($post->post_content, 'UTF-8') > 150) {
+        $content = str_replace('\n', '', mb_substr(strip_tags($post-> post_content), 0, 150,'UTF-8')) . '...';
+      } else {
+        $content = str_replace('\n', '', strip_tags($post->post_content));
+      }
+      $post_link = get_permalink($post->ID);
+      $img_link = get_the_post_thumbnail_url($post->ID, 'medium');
+      if (!$img_link) {
+        $img_link = get_template_directory_uri().'/images/logo-a-500x342.png';
+      }
+      $terms = get_the_terms($post->ID, 'blog_cat');
+      $post_type_link = esc_url(get_post_type_archive_link('blog'));
     ?>
 
     <!-- post item -->
@@ -84,12 +84,12 @@
 
 <!-- portfolio -->
 <section class="section home-portfolio">
-  <h2 class="section__ttl">Portfolio</h2>
+  <h2 class="section__ttl">PORTFOLIO</h2>
   <?php
-      $post;
-      $args = ['posts_per_page' => 5, 'post_type' => 'portfolio', 'orderby' => 'date', 'order' => 'DESC'];
-      $myposts = get_posts($args);
-     ?>
+    $post;
+    $args = ['posts_per_page' => 6, 'post_type' => 'portfolio', 'orderby' => 'date', 'order' => 'DESC'];
+    $myposts = get_posts($args);
+  ?>
 
   <!-- post entries -->
   <div class="portfolio-entries">
@@ -98,23 +98,23 @@
     <?php foreach($myposts  as $post) : setup_postdata($post); ?>
 
     <?php
-        $title;
-         if (mb_substr($post->post_title, 'UTF-8') > 50) {
-          $title = mb_substr($post->post_title, 0, 50, 'UTF-8') . '...';
-         } else {
-          $title = $post->post_title;
-         }
-        $content;
-        if (mb_strlen($post->post_content, 'UTF-8') > 150) {
-          $content = str_replace('\n', '', mb_substr(strip_tags($post-> post_content), 0, 150,'UTF-8')) . '...';
-        } else {
-          $content = str_replace('\n', '', strip_tags($post->post_content));
-        }
-        $post_link = get_permalink($post->ID);
-        $img_link = get_the_post_thumbnail_url($post->ID, 'thumb');
-        $terms = get_the_terms($post->ID, 'portfolio_cat');
-        $post_type_link = esc_url(get_post_type_archive_link('portfolio'));
-      ?>
+      $title;
+      if (mb_substr($post->post_title, 'UTF-8') > 50) {
+        $title = mb_substr($post->post_title, 0, 50, 'UTF-8') . '...';
+      } else {
+        $title = $post->post_title;
+      }
+      $content;
+      if (mb_strlen($post->post_content, 'UTF-8') > 150) {
+        $content = str_replace('\n', '', mb_substr(strip_tags($post-> post_content), 0, 150,'UTF-8')) . '...';
+      } else {
+        $content = str_replace('\n', '', strip_tags($post->post_content));
+      }
+      $post_link = get_permalink($post->ID);
+      $img_link = get_the_post_thumbnail_url($post->ID, 'thumb');
+      $terms = get_the_terms($post->ID, 'portfolio_cat');
+      $post_type_link = esc_url(get_post_type_archive_link('portfolio'));
+    ?>
 
     <!-- post item -->
     <article class="portfolio-entries__item" style="background-image:url(<?= $img_link; ?>)">
@@ -143,5 +143,93 @@
   <a href="<?= $post_type_link; ?>" class="pure-btn btn-05-rounded center-btn">一覧を見る</a>
 </section>
 <!-- end of portfolio -->
+
+<!-- button -->
+<section class="section home-button">
+  <h2 class="section__ttl">BUTTON DESIGN</h2>
+  <?php
+    $post;
+    $args = ['posts_per_page' => 6, 'post_type' => 'button', 'orderby' => 'date', 'order' => 'DESC'];
+    $myposts = get_posts($args);
+  ?>
+
+  <!-- post entries -->
+  <div class="button-entries">
+    <div class="btn-list">
+      <?php if ($myposts) : ?>
+      <?php foreach($myposts  as $post) : setup_postdata($post); ?>
+
+      <?php
+        $title;
+        if (mb_substr($post->post_title, 'UTF-8') > 50) {
+          $title = mb_substr($post->post_title, 0, 50, 'UTF-8') . '...';
+        } else {
+          $title = $post->post_title;
+        }
+        $post_link = get_permalink($post->ID);
+        $terms = get_the_terms($post->ID, 'button_cat');
+        $post_type_link = esc_url(get_post_type_archive_link('button'));
+        $html_field = get_field('html'); 
+        $html_escape = $html_field ? htmlentities($html_field, ENT_QUOTES, 'UTF-8') : "";
+        $css_field = get_field('css');
+        $css_escape = $css_field ? htmlentities($css_field, ENT_QUOTES, 'UTF-8') : "";
+      ?>
+
+      <!-- post item -->
+      <article class="buttton-entries__item">
+        <div class="btn-list__item">
+          <a href="<?= $post_link; ?>" class="link">
+            <h3 class="ttl-03 mb-10"><?= $title; ?></h3>
+            <time datetime="the_time( 'Y-m-d' )"><?php the_time( 'Y.m.d' ); ?></time>
+          </a>
+
+          <ul class="category-list mb-30">
+            <?php if (!empty($terms)) : ?>
+            <?php foreach ( $terms as $term ) : ?>
+            <li class="category-list__item"><a href="<?= esc_url(get_term_link($term)); ?>"><?= $term->name; ?></a></li>
+            <?php endforeach; ?>
+            <?php endif; ?>
+          </ul>
+
+          <div class="btn-box">
+            <?= $html_field ?>
+          </div>
+          <button class="btn-more-code pure-btn mt-40">
+            <span class="btn-more-code__icon">
+              <span class="btn-more-code__icon--line"></span>
+              <span class="btn-more-code__icon--line"></span>
+            </span>コードを見る
+          </button>
+          <div class="codebox-wrap">
+            <div class="codebox">
+              <div class="codebox__item">
+                <div class="codebox__head">
+                  <h3 class="codebox__ttl">HTML</h3>
+                  <div class="codebox__copy"></div>
+                </div>
+                <pre class="line-numbers"><code class="language-html"><?= $html_escape ?></code></pure>
+              </div>
+              <div class="codebox__item">
+                <div class="codebox__head">
+                  <h3 class="codebox__ttl">CSS</h3>
+                  <div class="codebox__copy"></div>
+                </div>
+                <pre class="line-numbers language-css"><code class="language-css"><?= $css_escape ?></code></pure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- end of post item -->
+
+      <?php endforeach; ?>
+      <?php wp_reset_postdata(); endif; ?>
+    </div>
+  </div>
+  <!-- end of post entries -->
+
+  <a href="<?= $post_type_link; ?>" class="pure-btn btn-05-rounded center-btn">一覧を見る</a>
+</section>
+<!-- end of button -->
 
 <?php get_footer(); ?>

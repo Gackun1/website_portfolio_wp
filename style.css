@@ -526,6 +526,10 @@ a {
   font-size: 1.4rem;
 }
 
+.button-entries .codebox {
+  height: 0;
+}
+
 .pure-btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -640,8 +644,8 @@ a {
   border-right: solid 2px #333;
   -webkit-transform: rotate(45deg) translate(0, 66%);
           transform: rotate(45deg) translate(0, 66%);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn-05:hover {
@@ -670,8 +674,8 @@ a {
   border-right: solid 2px #333;
   -webkit-transform: rotate(45deg) translate(0, 66%);
           transform: rotate(45deg) translate(0, 66%);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn-05-rounded:hover {
@@ -692,8 +696,8 @@ a {
   bottom: 50%;
   -webkit-transform: rotate(45deg) translate(0, 66%);
           transform: rotate(45deg) translate(0, 66%);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn-06:before {
@@ -738,8 +742,8 @@ a {
   bottom: 50%;
   -webkit-transform: rotate(45deg) translate(0, 66%);
           transform: rotate(45deg) translate(0, 66%);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn-06-rounded:before {
