@@ -23,8 +23,11 @@ function mytheme_setup_theme_supported_features() {
   // remove_theme_support( 'core-block-patterns' );
   
   add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
-  add_editor_style( '/css/editor-style.css' );
+  add_editor_style( get_template_directory_uri() . '/editor/editor-style.css' );
   add_theme_support( 'editor-styles' );
   add_theme_support( 'wp-block-styles' );
+  add_action( 'enqueue_block_editor_assets', function() {
+    wp_enqueue_script( 'my-style-selector', get_template_directory_uri() . '/editor/editor-helper.js', [ 'wp-blocks' ] );
+  } );
 
 ?>

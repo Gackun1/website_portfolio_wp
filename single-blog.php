@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
 
+<?php get_sidebar(); ?>
+
+
 <?php while ( have_posts() ) : the_post(); ?>
 <?php $terms = get_the_terms($post->ID, 'blog_cat'); ?>
 

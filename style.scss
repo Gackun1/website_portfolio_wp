@@ -26,3 +26,8 @@ Version: バージョン
     margin: 0 auto;
   }
 }
+
+.single-blog,
+.single-portfolio {
+  @import "editor/_post-heading";
+}

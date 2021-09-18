@@ -18,3 +18,9 @@ body {
 .wp-block[data-align="full"] {
   max-width: none;
 }
+
+.block-editor-block-list__layout, // ブロックの中身
+.block-editor-block-styles {
+  // ブロックのプレビュー
+  @import "_post-heading";
+}

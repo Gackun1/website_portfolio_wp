@@ -1,0 +1,13 @@
+.is-style-default {
+  padding: 10px 0;
+  font-size: 20px;
+  color: #333;
+}
+.is-style-under-line {
+  @extend .is-style-default;
+  border-bottom: 2px solid #333;
+}
+.is-style-left-line {
+  @extend .is-style-default;
+  border-left: 5px solid #333;
+}

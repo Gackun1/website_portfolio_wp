@@ -1102,4 +1102,23 @@ Version: バージョン
   padding: 0 1rem;
   margin: 0 auto;
 }
+
+.single-blog .is-style-default, .single-blog .is-style-under-line, .single-blog .is-style-left-line,
+.single-portfolio .is-style-default,
+.single-portfolio .is-style-under-line,
+.single-portfolio .is-style-left-line {
+  padding: 10px 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.single-blog .is-style-under-line,
+.single-portfolio .is-style-under-line {
+  border-bottom: 2px solid #333;
+}
+
+.single-blog .is-style-left-line,
+.single-portfolio .is-style-left-line {
+  border-left: 5px solid #333;
+}
 /*# sourceMappingURL=style.css.map */
