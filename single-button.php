@@ -2,7 +2,6 @@
 
 
 <?php while ( have_posts() ) : the_post(); ?>
-
 <?php $terms = get_the_terms($post->ID, 'button_cat'); ?>
 
 

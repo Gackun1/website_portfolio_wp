@@ -18,8 +18,24 @@
   <?php endif; ?>
 </ul>
 
+<?php 
+$img_main = get_field('main');
+$img_pc = get_field('pc'); 
+$img_sp = get_field('sp'); 
+?>
 
 <div class="edit-area">
+  <div class="js-image-popup">
+    <img src="<?= $img_main ?>" alt="" class="portfolio-mainimg js-image-popup__button">
+    <div class="js-image-popup__zoom-button"></div>
+    <div class="js-image-popup__bg">
+      <div class="js-image-popup__window">
+        <div class="js-image-popup__close-button"></div>
+        <div class="js-image-popup__image"><img src="<?= $img_pc ?>" alt=""></div>
+      </div>
+    </div>
+  </div>
+  
   <?php the_content(); ?>
 </div>
 <?php endwhile; ?>

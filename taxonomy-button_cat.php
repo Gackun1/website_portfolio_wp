@@ -2,6 +2,16 @@
 
 get_header(); ?>
 
+
+<h1 class="ttl-01">Button Design</h1>
+<section class="section">
+  <h2 class="ttl-02 mb-10">使用方法</h2>
+  <ol class="section__ol">
+    <li class="section__ol-item">共通のCSSをコピーして保存してください</li>
+    <li class="section__ol-item">使用したいボタンの「コードを見る」をクリックしてHTMLとCSSをコピーして保存してください</li>
+  </ol>
+</section>
+
 <h2 class="ttl-02">共通のCSS</h2>
 <div class="codebox codebox-main">
   <div class="codebox__item">

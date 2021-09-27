@@ -2,7 +2,7 @@
 
 get_header(); ?>
 
-<h1 class="ttl-01">ボタンデザイン集</h1>
+<h1 class="ttl-01">Button Design</h1>
 <section class="section">
   <h2 class="ttl-02 mb-10">使用方法</h2>
   <ol class="section__ol">

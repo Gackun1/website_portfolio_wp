@@ -85,7 +85,7 @@
   align-items: flex-start;
   gap: 20px;
   &__item {
-    width: 350px;
+    width: calc(33% - 5.1rem);
     padding: 2rem;
     border-radius: 1rem;
     background: #ffffff;

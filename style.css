@@ -10,8 +10,8 @@
 }
 
 @font-face {
-  font-family: "NotoSansJP-Bold";
-  src: url(fonts/NotoSansJP-Bold.otf);
+  font-family: "raisonne";
+  src: url(fonts/raisonne-demibold.ttf);
 }
 
 html {
@@ -45,6 +45,7 @@ a {
 
 .ttl-01 {
   font-size: 4rem;
+  font-family: "raisonne";
 }
 
 .ttl-02 {
@@ -215,6 +216,10 @@ a {
   margin-left: 10rem;
 }
 
+.pt-10 {
+  padding-top: 1rem;
+}
+
 .section {
   padding: 5rem 0;
 }
@@ -234,6 +239,8 @@ a {
 .section__ttl {
   font-size: 4rem;
   padding: 0 0 2rem 0;
+  font-family: "raisonne";
+  text-align: center;
 }
 
 .section__ol {
@@ -248,6 +255,15 @@ a {
   height: auto;
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  font-family: 'raisonne';
+  letter-spacing: 3px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #ffffff;
 }
 
 .header .inner {
@@ -283,12 +299,12 @@ a {
   opacity: 0.7;
 }
 
-.header__logo--img {
+.header__logo-img {
   width: 50px;
   height: 50px;
 }
 
-.header__logo--ttl {
+.header__logo-ttl {
   display: block;
   padding: 0 0 0 0.5rem;
   font-size: 1.8rem;
@@ -301,19 +317,33 @@ a {
   list-style: none;
 }
 
-.header__nav--item a {
+.header__nav-item a {
   font-size: 1.6rem;
   color: #333;
   text-decoration: none;
   -webkit-transition: all 0.3;
   transition: all 0.3;
+  display: inline-block;
+  position: relative;
 }
 
-.header__nav--item a:hover {
-  opacity: 0.7;
+.header__nav-item a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 1px;
+  background: #333;
+  bottom: -3px;
+  left: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-.header__nav--item + .header__nav--item {
+.header__nav-item a:hover:after {
+  width: 100%;
+}
+
+.header__nav-item + .header__nav-item {
   margin: 0 0 0 1.5rem;
 }
 
@@ -330,6 +360,76 @@ a {
           justify-content: center;
   padding: 2rem 0;
   color: #fff;
+}
+
+.sidebar {
+  min-width: 25rem;
+  max-width: 25rem;
+  margin: 0 0 0 3rem;
+}
+
+.sidebar__list {
+  list-style: none;
+}
+
+.sidebar__list-item {
+  border-top: solid 2px #333;
+  padding: 1rem;
+}
+
+.sidebar__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sidebar__count {
+  display: block;
+  padding: 0 1rem;
+  background: #333;
+  color: #fff;
+}
+
+.sidebar__search #searchform div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sidebar__search #searchform input {
+  height: 4rem;
+  border: none;
+  outline: none;
+  background: #efefef;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  font-family: "NotoSansJP-Regular";
+}
+
+.sidebar__search #searchform input[type="text"] {
+  width: 16rem;
+  padding: 0 1rem;
+}
+
+.sidebar__search #searchform input[type="submit"] {
+  width: 6rem;
+  margin: 0 0 0 1rem;
+  cursor: pointer;
+}
+
+.sidebar__search #searchform input[type="submit"]:hover {
+  background: #e6e6e6;
+}
+
+.sidebar__blog {
+  margin: 3rem 0 0 0;
+}
+
+.sidebar__portfolio {
+  margin: 2rem 0 0 0;
 }
 
 #breadcrumb {
@@ -373,7 +473,7 @@ a {
 }
 
 .home-top__ttl {
-  font-size: 8rem;
+  font-size: 5rem;
   font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -382,10 +482,12 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
+  font-family: "raisonne";
 }
 
 .home-top__subttl {
-  font-size: 5rem;
+  font-size: 2rem;
   display: block;
 }
 
@@ -469,8 +571,10 @@ a {
   background: #00000088;
 }
 
-.portfolio-entries a:hover .portfolio-entries__ttl--hover {
+.portfolio-entries a:hover .portfolio-entries__ttl {
   opacity: 1;
+  -webkit-filter: blur(0);
+          filter: blur(0);
 }
 
 .portfolio-entries__item {
@@ -479,15 +583,15 @@ a {
   background-position: center;
   background-size: 100% 100%;
   position: relative;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 
 .portfolio-entries__item:hover {
   background-size: 105% 105%;
 }
 
-.portfolio-entries__ttl--hover {
+.portfolio-entries__ttl {
   font-size: 1.6rem;
   font-weight: normal;
   display: block;
@@ -499,18 +603,10 @@ a {
           transform: translate(0, -50%);
   color: #fff;
   opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.portfolio-entries__txtbox {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-}
-
-.portfolio-entries__date {
-  font-size: 1.4rem;
+  -webkit-filter: blur(6px);
+          filter: blur(6px);
+  -webkit-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 
 .portfolio-entries .category-list {
@@ -526,8 +622,16 @@ a {
   font-size: 1.4rem;
 }
 
+.portfolio-entries .category-list__item + .category-list__item {
+  margin-left: 0;
+}
+
 .button-entries .codebox {
   height: 0;
+}
+
+.button-entries__item {
+  width: 100%;
 }
 
 .pure-btn {
@@ -980,7 +1084,7 @@ a {
 }
 
 .btn-list__item {
-  width: 350px;
+  width: calc(33% - 5.1rem);
   padding: 2rem;
   border-radius: 1rem;
   background: #ffffff;
@@ -1087,6 +1191,127 @@ a {
   background: #eeeeee;
 }
 
+.portfolio-mainimg {
+  width: 100%;
+  cursor: pointer;
+}
+
+.js-image-popup {
+  position: relative;
+}
+
+.js-image-popup__zoom-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 100vw;
+  background: #fff;
+  cursor: pointer;
+}
+
+.js-image-popup__zoom-button:after {
+  content: "";
+  background: url(images/zoom.png);
+  background-size: cover;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-51%, -51%);
+          transform: translate(-51%, -51%);
+}
+
+.js-image-popup ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.js-image-popup ::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 5px;
+}
+
+.js-image-popup ::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+
+.js-image-popup__bg {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: #00000099;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  -webkit-transition: opacity 0.5s, visibility 0s ease 0.5s;
+  transition: opacity 0.5s, visibility 0s ease 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.js-image-popup__window {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.js-image-popup__image {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.js-image-popup__image img {
+  width: 100%;
+}
+
+.js-image-popup__close-button {
+  position: fixed;
+  right: -14px;
+  top: -18px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 10rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.js-image-popup__close-button:after, .js-image-popup__close-button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2rem;
+  height: 0.3rem;
+  background: #333;
+}
+
+.js-image-popup__close-button:before {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.js-image-popup__close-button:after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.js-image-popup__is-show {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  opacity: 1;
+  visibility: visible;
+}
+
 /*
 Theme Name: Gackun portfolio
 Theme URl: テーマのURL
@@ -1097,10 +1322,21 @@ License: テーマのライセンス
 License URl: テーマのライセンスURL
 Version: バージョン
 */
-.site-content .inner {
+.page-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   max-width: 128rem;
-  padding: 0 1rem;
+  padding: 0 3rem;
   margin: 0 auto;
+}
+
+#content {
+  width: 100%;
 }
 
 .single-blog .is-style-default, .single-blog .is-style-under-line, .single-blog .is-style-left-line,
@@ -1120,5 +1356,13 @@ Version: バージョン
 .single-blog .is-style-left-line,
 .single-portfolio .is-style-left-line {
   border-left: 5px solid #333;
+}
+
+.single-blog .wp-block-image.size-full img,
+.single-portfolio .wp-block-image.size-full img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */

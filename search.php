@@ -1,10 +1,17 @@
 <?php get_header(); ?>
 
-<h1 class="ttl-01">Blog</h1>
+<?php
+  global $wp_query;
+  $total_results = $wp_query->found_posts;
+  $search_query = get_search_query();
+  query_posts( $query_string );
+?>
+
+<h1 class="ttl-01">「<?= $search_query; ?>」の検索結果（<?php echo $total_results; ?>件）</h1>
 
 <section class="section">
   <div class="post-list">
-
+    <?php if ( $total_results > 0 ) : ?>
     <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
 
@@ -52,13 +59,16 @@
     </article>
     <!-- end of post item -->
 
-    <?php endwhile; ?>
 
-    <?php else : ?>
-    何も投稿がありません。
-    <?php endif; ?>
+    <?php endwhile; ?>
+  </ul>
+  <?php endif; ?>
+  <?php else: ?>
+  <p>「<?= $search_query; ?>」に一致する情報は見つかりませんでした。</p>
+  <?php endif; ?>
 
   </div>
+
 </section>
 
 <?php get_footer(); ?>

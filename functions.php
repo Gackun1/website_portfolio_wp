@@ -6,6 +6,8 @@ function add_files() {
   wp_enqueue_style( 'prism-css', get_template_directory_uri() . '/css/prism.css', "", '' );
   wp_enqueue_script( 'prism-js', get_template_directory_uri() . '/js/prism.js', "", '' );
   wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/script.js', "", '' );
+  wp_enqueue_script( 'text-rotate-js', get_template_directory_uri() . '/js/text-rotate.js', "", '' );
+  wp_enqueue_script( 'image-popup-js', get_template_directory_uri() . '/js/image-popup.js', "", '' );
 }
 add_action('wp_enqueue_scripts', 'add_files');
 

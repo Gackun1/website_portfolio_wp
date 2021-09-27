@@ -3,11 +3,14 @@
 @import "css/_color";
 @import "css/_header";
 @import "css/_footer";
+@import "css/sidebar";
 @import "css/_breadcrumb";
 @import "css/_home";
 @import "css/_button";
 @import "css/_archive-button";
 @import "css/_single-button";
+@import "css/_single-portfolio";
+@import "css/_js-image-popup";
 /*
 Theme Name: Gackun portfolio
 Theme URl: テーマのURL
@@ -19,15 +22,20 @@ License URl: テーマのライセンスURL
 Version: バージョン
 */
 
-.site-content {
-  .inner {
-    max-width: 128rem;
-    padding: 0 1rem;
-    margin: 0 auto;
-  }
+.page-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 128rem;
+  padding: 0 3rem;
+  margin: 0 auto;
+}
+
+#content {
+  width: 100%;
 }
 
 .single-blog,
 .single-portfolio {
   @import "editor/_post-heading";
+  @import "editor/_post-image";
 }

@@ -1,3 +1,5 @@
+<?php if( !is_home() || !is_front_page() ) : ?>
+
 <aside id="sidebar" class="sidebar">
   <div class="sidebar__search">
     <p class="sidebar__ttl">キーワードで探す</p>
@@ -32,3 +34,5 @@
     </ul>
   </div>
 </aside>
+
+<?php endif; ?>

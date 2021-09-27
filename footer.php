@@ -10,7 +10,8 @@
 
 ?>
 </div>
-</main><!-- #content -->
+</main><!-- end of content -->
+</div><!-- end of wrapper -->
 
 <footer class="footer mt-100">
   <div class="inner">

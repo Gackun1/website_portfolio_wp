@@ -1,0 +1,56 @@
+.sidebar {
+  min-width: 25rem;
+  max-width: 25rem;
+  margin: 0 0 0 3rem;
+  &__list {
+    list-style: none;
+  }
+  &__list-item {
+    border-top: solid 2px #333;
+    padding: 1rem;
+  }
+  &__link{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__count {
+    display: block;
+    padding:0 1rem;
+    background: #333;
+    color: #fff;
+  }
+  &__search {
+    #searchform {
+      div {
+        display: flex;
+      }
+      input {
+        height: 4rem;
+        border:none;
+        outline: none;
+        background: #efefef;
+        border-radius:3px;
+        font-size: 1.4rem;
+        font-family: "NotoSansJP-Regular";
+      }
+      input[type="text"] {
+        width: 16rem;
+        padding: 0 1rem;
+      } 
+      input[type="submit"] {
+        width: 6rem;
+        margin: 0 0 0 1rem;
+        cursor: pointer;
+        &:hover {
+          background: #e6e6e6;
+        }
+      }
+    }
+  }
+  &__blog {
+    margin: 3rem 0 0 0;
+  }
+  &__portfolio {
+    margin: 2rem 0 0 0;
+  }
+}

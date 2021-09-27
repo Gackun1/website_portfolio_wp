@@ -1,5 +1,6 @@
 .ttl-01 {
   font-size: 4rem;
+  font-family: "raisonne";
 }
 
 .ttl-02 {
@@ -25,6 +26,10 @@
   }
 }
 
+.pt-10 {
+  padding-top: 1rem;
+}
+
 .section {
   padding: 5rem 0;
   .center-btn {
@@ -37,6 +42,8 @@
   &__ttl {
     font-size: 4rem;
     padding: 0 0 2rem 0;
+    font-family: "raisonne";
+    text-align: center;
   }
   &__ol {
     list-style-position: inside;
