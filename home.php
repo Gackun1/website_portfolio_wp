@@ -110,7 +110,7 @@
 
     <!-- post item -->
     <article class="blog-entries__item">
-      <a href="<?= $post_link; ?>"><img src="<?= $img_link; ?>" alt="" class="blog-entries__img"></a>
+      <a class="blog-entries__img-wrapper" href="<?= $post_link; ?>"><img src="<?= $img_link; ?>" alt="" class="blog-entries__img"></a>
       <div class="blog-entries__txtbox">
         <a href="<?= $post_link; ?>">
           <h3 class="blog-entries__ttl"><?= $title; ?></h3>

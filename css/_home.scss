@@ -25,15 +25,14 @@
   &__item {
     display: flex;
     align-items: flex-start;
-    padding: 2rem 0;
-    & + & {
-      border-top: solid 2px #e7e7e7;
-    }
+    margin: 2rem 0;
+    box-shadow: 0 3px 6px -2px #ccc;
+    border-radius: 5px;
     &:first-child {
-      padding-top: 0;
+      margin-top: 0;
     }
     &:last-child {
-      padding-bottom: 0;
+      margin-bottom: 0;
     }
   }
   &__img {
@@ -44,10 +43,31 @@
     font-size: 2.4rem;
   }
   &__txtbox {
-    padding: 0 2rem;
+    padding: 0 0 0 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+  }
+}
+
+@media screen and  (max-width: $sp-max-width) {
+  .blog-entries {
+    &__img-wrapper {
+      width: 100%;
+    }
+    &__ttl {
+      font-size: 2rem;
+    }
+    &__img {
+      width: 100%;
+      background: #f9f9f9;
+    }
+    &__item {
+      flex-direction: column;
+    }
+    &__txtbox {
+      padding: 0;
+    }
   }
 }
 
@@ -57,7 +77,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 3vw;
+  gap: 1vw;
   a {
     display: block;
     padding-top: 100%;
@@ -72,14 +92,16 @@
     }
   }
   &__item {
-    width: calc(100% / 3 - 2.2vw);
+    width: calc(100% / 3 - 0.7vw);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     position: relative;
     transition: all 0.75s ease-in-out;
+    filter: grayscale(90%);
     &:hover {
       background-size: 105% 105%;
+      filter: grayscale(0);
     }
   }
   &__ttl {
@@ -107,6 +129,25 @@
       font-size: 1.4rem;
       & + .category-list__item {
         margin-left: 0;
+      }
+    }
+  }
+}
+
+@media screen and  (max-width: $sp-max-width) {
+  .portfolio-entries {
+    gap: 3rem;
+    &__item {
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      position: relative;
+      transition: all 0.75s ease-in-out;
+      filter: grayscale(90%);
+      &:hover {
+        background-size: 105% 105%;
+        filter: grayscale(0);
       }
     }
   }

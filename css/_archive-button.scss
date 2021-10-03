@@ -93,6 +93,20 @@
   }
 }
 
+@media screen and  (max-width: $sp-max-width) {
+  .btn-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: column;
+    &__item {
+      width: calc(100% - 4rem);
+    }
+  }
+}
+
 .btn-more-code {
   width: 100%;
   border: none;
@@ -150,7 +164,7 @@
       display: block;
       position: relative;
       padding: 0.1rem 1.5rem 0.1rem 2.5rem;
-      margin: 1rem 1rem 0 1rem;
+      margin: 1rem 1rem 0 0;
       border-radius: 10rem;
       background: #fff;
       box-shadow: 1px 1px 3px #bbb;

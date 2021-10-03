@@ -25,6 +25,7 @@ body {
 .block-editor-block-styles .is-style-under-line,
 .block-editor-block-styles .is-style-left-line {
   padding: 10px 0;
+  margin: 2rem 0;
   font-size: 20px;
   color: #333;
 }

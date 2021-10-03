@@ -1,6 +1,5 @@
 .sidebar {
-  min-width: 25rem;
-  max-width: 25rem;
+  width: 25rem;
   margin: 0 0 0 3rem;
   &__list {
     list-style: none;
@@ -52,5 +51,12 @@
   }
   &__portfolio {
     margin: 2rem 0 0 0;
+  }
+}
+
+@media screen and  (max-width: $sp-max-width) {
+  .sidebar {
+    width: 100%;
+    margin: 10rem 0 0 0;
   }
 }

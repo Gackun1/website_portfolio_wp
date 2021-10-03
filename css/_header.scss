@@ -3,7 +3,7 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   font-family: 'raisonne';
   letter-spacing: 3px;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -66,5 +66,11 @@
     & + & {
       margin: 0 0 0 1.5rem;
     }
+  }
+}
+
+@media screen and  (max-width: $sp-max-width) {
+  .header__nav {
+    display: none;
   }
 }

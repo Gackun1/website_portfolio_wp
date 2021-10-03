@@ -17,6 +17,7 @@
   <title>YoshikawaGaku portfolio site</title>
   <link rel="icon" type="image/x-icon" href="<?= get_template_directory_uri();?>/images/favicon-48x48.ico"
     sizes="48x48">
+  <?php echo is_user_logged_in() ? '<style type="text/css">.header{margin-top: 32px;}</style>' : '' ?>
   <?php wp_head(); ?>
 </head>
 
@@ -24,7 +25,7 @@
   <?php wp_body_open(); ?>
   <div id="page" class="site">
 
-    <header class="header mb-30">
+    <header class="header">
       <div class="inner">
         <a href="<?= home_url();?>/" class="header__logo">
           <img src="<?= get_template_directory_uri();?>/images/logo.png" alt="YoshikawaGakuのロゴ"
@@ -38,6 +39,19 @@
             <li class="header__nav-item"><a href="<?= home_url();?>/button" class="js-text-hover-rotate">ButtonDesign</a></li>
           </ul>
         </nav>
+        <nav id="hamburger_nav">
+          <ul>
+            <li><a href="<?= home_url();?>/" class="js-text-hover-rotate">Home</a></li>
+            <li><a href="<?= home_url();?>/portfolio" class="js-text-hover-rotate">Portfolio</a></li>
+            <li><a href="<?= home_url();?>/blog" class="js-text-hover-rotate">Blog</a></li>
+            <li><a href="<?= home_url();?>/button" class="js-text-hover-rotate">ButtonDesign</a></li>
+          </ul>
+        </nav>
+        <div id="hamburger_button">
+          <span class="hamburger_line" id="line1"></span>
+          <span class="hamburger_line" id="line2"></span>
+          <span class="hamburger_line" id="line3"></span>
+        </div>
       </div>
     </header>
 

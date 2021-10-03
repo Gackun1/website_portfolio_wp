@@ -1,6 +1,6 @@
 @import "css/_default";
 @import "css/_utility";
-@import "css/_color";
+@import "css/_variable";
 @import "css/_header";
 @import "css/_footer";
 @import "css/sidebar";
@@ -11,6 +11,7 @@
 @import "css/_single-button";
 @import "css/_single-portfolio";
 @import "css/_js-image-popup";
+@import "css/_hamburger";
 /*
 Theme Name: Gackun portfolio
 Theme URl: テーマのURL
@@ -22,12 +23,22 @@ License URl: テーマのライセンスURL
 Version: バージョン
 */
 
+body {
+  overflow-x: hidden;
+}
+
 .page-wrapper {
   display: flex;
   flex-direction: row-reverse;
   max-width: 128rem;
-  padding: 0 3rem;
+  padding: 10rem 3rem 0 3rem;
   margin: 0 auto;
+}
+
+@media screen and  (max-width: $sp-max-width) {
+  .page-wrapper {
+    flex-direction: column-reverse;
+  }
 }
 
 #content {

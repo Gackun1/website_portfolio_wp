@@ -8,6 +8,7 @@ function add_files() {
   wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/script.js', "", '' );
   wp_enqueue_script( 'text-rotate-js', get_template_directory_uri() . '/js/text-rotate.js', "", '' );
   wp_enqueue_script( 'image-popup-js', get_template_directory_uri() . '/js/image-popup.js', "", '' );
+  wp_enqueue_script( 'hamburger-js', get_template_directory_uri() . '/js/hamburger.js', "", '' );
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
