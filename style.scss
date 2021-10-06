@@ -1,27 +1,27 @@
+/*
+Theme Name: Gackun portfolio
+Theme URl: テーマのURL
+Author: Yoshikawa Gaku
+Description: portfolio theme
+tags: portfolio
+Version: 1.0.0
+*/
+
 @import "css/_default";
 @import "css/_utility";
 @import "css/_variable";
 @import "css/_header";
 @import "css/_footer";
-@import "css/sidebar";
+@import "css/_sidebar";
 @import "css/_breadcrumb";
 @import "css/_home";
 @import "css/_button";
 @import "css/_archive-button";
+@import "css/_archive-portfolio";
 @import "css/_single-button";
 @import "css/_single-portfolio";
 @import "css/_js-image-popup";
 @import "css/_hamburger";
-/*
-Theme Name: Gackun portfolio
-Theme URl: テーマのURL
-Author: Gackun
-Description: テーマの説明
-tags: テーマのタグ
-License: テーマのライセンス
-License URl: テーマのライセンスURL
-Version: バージョン
-*/
 
 body {
   overflow-x: hidden;

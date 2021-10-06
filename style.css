@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+Theme Name: Gackun portfolio
+Theme URl: テーマのURL
+Author: Yoshikawa Gaku
+Description: portfolio theme
+tags: portfolio
+Version: 1.0.0
+*/
 * {
   margin: 0;
   padding: 0;
@@ -262,7 +270,7 @@ a {
   left: 0;
   width: 100%;
   z-index: 999;
-  background: #ffffff;
+  background: #FFF;
 }
 
 .header .inner {
@@ -346,7 +354,7 @@ a {
   margin: 0 0 0 1.5rem;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .header__nav {
     display: none;
   }
@@ -378,7 +386,12 @@ a {
 
 .sidebar__list-item {
   border-top: solid 2px #333;
+  border-bottom: solid 2px #333;
   padding: 1rem;
+}
+
+.sidebar__list-item + .sidebar__list-item {
+  border-top: none;
 }
 
 .sidebar__link {
@@ -436,7 +449,13 @@ a {
   margin: 2rem 0 0 0;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .sidebar {
     width: 100%;
     margin: 10rem 0 0 0;
@@ -522,6 +541,8 @@ a {
   -webkit-box-shadow: 3px 3px 10px -2px #ccc;
           box-shadow: 3px 3px 10px -2px #ccc;
   border-radius: 5px;
+  overflow: hidden;
+  background: #ffffffee;
 }
 
 .blog-entries__item:first-child {
@@ -579,7 +600,7 @@ a {
       justify-content: space-around;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .blog-entries__imgbox {
     width: 100%;
     height: 200px;
@@ -619,7 +640,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 1vw;
+  gap: 2rem;
 }
 
 .portfolio-entries a {
@@ -641,15 +662,15 @@ a {
 }
 
 .portfolio-entries__item {
-  width: calc(100% / 3 - 0.7vw);
+  width: calc(100% / 3 - 1.4rem);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
   position: relative;
   -webkit-transition: all 0.75s ease-in-out;
   transition: all 0.75s ease-in-out;
-  -webkit-filter: grayscale(90%);
-          filter: grayscale(90%);
+  -webkit-filter: grayscale(0.7);
+          filter: grayscale(0.7);
 }
 
 .portfolio-entries__item:hover {
@@ -693,7 +714,7 @@ a {
   margin-left: 0;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .portfolio-entries {
     gap: 3rem;
   }
@@ -724,6 +745,9 @@ a {
 }
 
 .pure-btn {
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1173,15 +1197,15 @@ a {
 }
 
 .btn-list__item {
-  width: calc(33% - 5.1rem);
+  width: calc(100% / 3 - 5.5rem);
   padding: 2rem;
   border-radius: 1rem;
-  background: #ffffff;
+  background: #ffffffee;
   -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
           box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1024px) {
   .btn-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1195,6 +1219,14 @@ a {
         -ms-flex-align: start;
             align-items: flex-start;
     gap: 20px;
+  }
+  .btn-list__item {
+    width: calc(50% - 5rem);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .btn-list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1213,6 +1245,8 @@ a {
   color: #333;
   background-image: linear-gradient(120deg, #f3f3f3 0%, #ebedee 100%);
   cursor: pointer;
+  white-space: nowrap;
+  padding-left: 9rem;
 }
 
 .btn-more-code:hover {
@@ -1296,6 +1330,112 @@ a {
   height: 0.5rem;
   border-radius: 10rem;
   background: #444;
+}
+
+.archive-portfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 3rem;
+}
+
+.archive-portfolio__item {
+  width: calc(50% - 1.5rem);
+  -webkit-box-shadow: 3px 3px 10px -2px #ccc;
+          box-shadow: 3px 3px 10px -2px #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.archive-portfolio__link {
+  display: block;
+  width: 100%;
+}
+
+.archive-portfolio__link:hover .archive-portfolio__img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.archive-portfolio__link:hover .archive-portfolio__hov {
+  opacity: 1;
+}
+
+.archive-portfolio__link:hover .archive-portfolio__ttlhov {
+  -webkit-filter: blur(0);
+          filter: blur(0);
+}
+
+.archive-portfolio__imgbox {
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.archive-portfolio__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: grayscale(0.7);
+          filter: grayscale(0.7);
+  -webkit-transition: 0.75s ease-in-out;
+  transition: 0.75s ease-in-out;
+}
+
+.archive-portfolio__ttl {
+  padding: 1rem 1rem 0 1rem;
+}
+
+.archive-portfolio__date {
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+.archive-portfolio .archive-portfolio__hov {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #00000088;
+  opacity: 0;
+  -webkit-transition: 0.75s ease-in-out;
+  transition: 0.75s ease-in-out;
+}
+
+.archive-portfolio .archive-portfolio__ttlhov {
+  font-size: 2rem;
+  font-weight: normal;
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  color: #fff;
+  -webkit-filter: blur(6px);
+          filter: blur(6px);
+  -webkit-transition: 0.75s ease-in-out;
+  transition: 0.75s ease-in-out;
+}
+
+.archive-portfolio .category-list {
+  padding: 0 1rem 1rem 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .archive-portfolio__item {
+    width: 100%;
+  }
 }
 
 .single-button .btn-area {
@@ -1521,22 +1661,12 @@ a {
           transform: translateX(-100%);
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   #hamburger_button {
     display: block;
   }
 }
 
-/*
-Theme Name: Gackun portfolio
-Theme URl: テーマのURL
-Author: Gackun
-Description: テーマの説明
-tags: テーマのタグ
-License: テーマのライセンス
-License URl: テーマのライセンスURL
-Version: バージョン
-*/
 body {
   overflow-x: hidden;
 }
@@ -1554,7 +1684,7 @@ body {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .page-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;

@@ -27,18 +27,7 @@
     <?php foreach($myposts  as $post) : setup_postdata($post); ?>
 
     <?php
-      $title;
-      if (mb_substr($post->post_title, 'UTF-8') > 50) {
-        $title = mb_substr($post->post_title, 0, 50, 'UTF-8') . '...';
-      } else {
-        $title = $post->post_title;
-      }
-      $content;
-      if (mb_strlen($post->post_content, 'UTF-8') > 150) {
-        $content = str_replace('\n', '', mb_substr(strip_tags($post-> post_content), 0, 150,'UTF-8')) . '...';
-      } else {
-        $content = str_replace('\n', '', strip_tags($post->post_content));
-      }
+      $title = $post->post_title;
       $post_link = get_permalink($post->ID);
       $img_link = get_the_post_thumbnail_url($post->ID, 'thumb');
       $terms = get_the_terms($post->ID, 'portfolio_cat');
@@ -65,7 +54,7 @@
   </div>
   <!-- end of post entries -->
 
-  <a href="<?= $post_type_link; ?>" class="pure-btn btn-05-rounded center-btn">一覧を見る</a>
+  <a href="<?= $post_type_link; ?>" class="pure-btn btn-05-rounded center-btn">SEE MORE</a>
 </section>
 <!-- end of portfolio -->
 
@@ -124,7 +113,7 @@
   </div>
   <!-- end of post entries -->
 
-  <a href="<?= $post_type_link; ?>" class="pure-btn btn-05-rounded center-btn">一覧を見る</a>
+  <a href="<?= $post_type_link; ?>" class="pure-btn btn-05-rounded center-btn">SEE MORE</a>
 </section>
 <!-- end of tecblog -->
 
@@ -211,8 +200,25 @@
   </div>
   <!-- end of post entries -->
 
-  <a href="<?= $post_type_link; ?>" class="pure-btn btn-05-rounded center-btn">一覧を見る</a>
+  <a href="<?= $post_type_link; ?>" class="pure-btn btn-05-rounded center-btn">SEE MORE</a>
 </section>
 <!-- end of button -->
+
+<?php if( is_home() ) : ?>
+  <style>
+    #canvas canvas {
+      object-fit: cover;
+      z-index: -1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+  <div id="canvas"></div>
+  <script src="<?= get_template_directory_uri() ?>/js/matter.js"></script>
+  <script src="<?= get_template_directory_uri() ?>/js/index-anime.js"></script>
+<?php endif;?>
 
 <?php get_footer(); ?>

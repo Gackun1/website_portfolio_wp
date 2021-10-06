@@ -28,6 +28,8 @@
     margin: 2rem 0;
     box-shadow: 3px 3px 10px -2px #ccc;;
     border-radius: 5px;
+    overflow: hidden;
+    background: #ffffffee;
     &:first-child {
       margin-top: 0;
     }
@@ -110,7 +112,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1vw;
+  gap: 2rem;
   a {
     display: block;
     padding-top: 100%;
@@ -125,13 +127,13 @@
     }
   }
   &__item {
-    width: calc(100% / 3 - 0.7vw);
+    width: calc(100% / 3 - 1.4rem);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     position: relative;
     transition: all 0.75s ease-in-out;
-    filter: grayscale(90%);
+    filter: grayscale(0.7);
     &:hover {
       background-size: 105% 105%;
       filter: grayscale(0);

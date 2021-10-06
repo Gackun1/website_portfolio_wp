@@ -1,0 +1,81 @@
+.archive-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+  &__item {
+    width: calc(50% - 1.5rem);
+    box-shadow: 3px 3px 10px -2px #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  &__link {
+    display: block;
+    width: 100%;
+    &:hover {
+      .archive-portfolio__img {
+        transform: scale(1.05);
+        filter: grayscale(0);
+      }
+      .archive-portfolio__hov {
+        opacity: 1;
+      }
+      .archive-portfolio__ttlhov {
+        filter: blur(0);
+      }
+    }
+  }
+  &__imgbox {
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1;
+    position: relative;
+  }
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(0.7);
+    transition: 0.75s ease-in-out;
+  }
+  &__ttl {
+    padding: 1rem 1rem 0 1rem;
+  }
+  &__date {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+  .archive-portfolio__hov {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1;
+    background: #00000088;
+    opacity: 0;
+    transition: 0.75s ease-in-out;
+  }
+  .archive-portfolio__ttlhov {
+    font-size: 2rem;
+    font-weight: normal;
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(0, -50%);
+    color: #fff;
+    filter: blur(6px);
+    transition: 0.75s ease-in-out;
+  }
+  .category-list {
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+@media screen and  (max-width: $sp-max-width) {
+  .archive-portfolio {
+    &__item {
+      width: 100%;
+    }
+  }
+}

@@ -6,7 +6,11 @@
   }
   &__list-item {
     border-top: solid 2px #333;
+    border-bottom: solid 2px #333;
     padding: 1rem;
+    &  + & {
+      border-top: none;
+    }
   }
   &__link{
     display: flex;
@@ -51,6 +55,12 @@
   }
   &__portfolio {
     margin: 2rem 0 0 0;
+  }
+}
+
+@media screen and  (max-width: $tb-max-width) {
+  .sidebar {
+    display: none;
   }
 }
 
