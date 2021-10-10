@@ -71,13 +71,15 @@ const option = {
   },
 };
 
-const colorList = ["#D6A3DC", "#F7DB70", "#EABEBF", "#75CCE8", "#A5DEE5"];
+// const colorList = ["#D6A3DC", "#F7DB70", "#EABEBF", "#75CCE8", "#A5DEE5"];
+const colorList = ["#eee", "#e8e8e8", "#c7c7c7"]
 const rand = (n) => Math.floor(Math.random() * n);
-const randSize = (n) => Math.floor(Math.random() * (n / 5));
+const randSize = (n) => Math.floor(Math.random() * (n / 20));
 
-const ballList = [...new Array(5).keys()].map((index) => {
+const ballList = [...new Array(100).keys()].map((index) => {
   const circleOpt = { ...option };
-  circleOpt.render.fillStyle = colorList[index];
+  // circleOpt.render.fillStyle = colorList[rand(colorList.length)];
+  circleOpt.render.fillStyle = "#eeeeee" + rand(255).toString(16) ;
   const size = randSize(w);
   const box = Bodies.circle(rand(w), rand(h), size, circleOpt);
   return box;

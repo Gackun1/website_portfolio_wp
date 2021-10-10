@@ -2,12 +2,10 @@
 
 
 <section class="section home-top">
-  <div class="home-top__inner">
-    <h1 class="home-top__ttl">
-      <span class="home-top__subttl">WEB DESIGNER / DEVELOPER</span>
-      <span class="home-top__mainttl">YOSHIKAWA GAKU</span>
-    </h1>
-  </div>
+  <h1 class="home-top__ttl">
+    <span class="home-top__subttl">WEB DESIGNER / DEVELOPER</span>
+    <span class="home-top__mainttl">YOSHIKAWA GAKU</span>
+  </h1>
 </section>
 
 

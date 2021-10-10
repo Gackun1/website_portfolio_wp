@@ -25,6 +25,7 @@ $img_sp = get_field('sp');
 ?>
 
 <div class="edit-area">
+  <?php if(!empty($img_main)) : ?>
   <div class="js-image-popup">
     <img src="<?= $img_main ?>" alt="" class="portfolio-mainimg js-image-popup__button">
     <div class="js-image-popup__zoom-button"></div>
@@ -35,6 +36,7 @@ $img_sp = get_field('sp');
       </div>
     </div>
   </div>
+  <?php endif; ?>
   
   <?php the_content(); ?>
 </div>
