@@ -44,11 +44,11 @@ window.addEventListener("load", () => {
     engine.world.gravity.y = 0;
     window.addEventListener("scroll", () => {
       if (sc()) {
-        engine.world.gravity.y = 0.5;
+        engine.world.gravity.y = 0.3;
       } else {
-        engine.world.gravity.y = -0.5;
+        engine.world.gravity.y = -0.3;
       }
-      setTimeout(() => (engine.world.gravity.y = 0), 100);
+      setTimeout(() => (engine.world.gravity.y = 0), 300);
     });
   }, 800);
 });
@@ -60,7 +60,7 @@ const w = windowSize.w * 2,
 
 const option = {
   isStatic: false, //外力を加えても動かない
-  density: 0.001, //質量　デフォ0.001
+  density: 0.1, //質量　デフォ0.001
   friction: 0, //摩擦係数　デフォ0.1
   frictionAir: 0, //空気抵抗 デフォ0.01
   restitution: 0.5, //　反発係数　デフォ0 　範囲(0~1)
@@ -74,13 +74,13 @@ const option = {
 // const colorList = ["#D6A3DC", "#F7DB70", "#EABEBF", "#75CCE8", "#A5DEE5"];
 const colorList = ["#eee", "#e8e8e8", "#c7c7c7"]
 const rand = (n) => Math.floor(Math.random() * n);
-const randSize = (n) => Math.floor(Math.random() * (n / 20));
+const randSize = (n) => Math.floor(Math.random() * (n / 50));
 
-const ballList = [...new Array(100).keys()].map((index) => {
+const ballList = [...new Array(350).keys()].map((index) => {
   const circleOpt = { ...option };
   // circleOpt.render.fillStyle = colorList[rand(colorList.length)];
   circleOpt.render.fillStyle = "#eeeeee" + rand(255).toString(16) ;
-  const size = randSize(w);
+  const size = randSize(w) + 3;
   const box = Bodies.circle(rand(w), rand(h), size, circleOpt);
   return box;
 });

@@ -33,8 +33,9 @@
     ?>
 
     <!-- post item -->
-    <article class="portfolio-entries__item" style="background-image:url(<?= $img_link; ?>)">
+    <article class="portfolio-entries__item">
       <a href="<?= $post_link; ?>">
+        <img src="<?= $img_link; ?>" alt="" class="portfolio-entries__bg">
         <ul class="category-list mb-10">
           <?php if (!empty($terms)) : ?>
           <?php foreach ($terms as $term) : ?>
