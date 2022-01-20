@@ -99,7 +99,7 @@
         <ul class="category-list mb-10">
           <?php if (!empty($terms)) : ?>
           <?php foreach ($terms as $term) : ?>
-          <li class="category-list__item"><a href="<?= esc_url(get_term_link($term)); ?>"><?= $term->name; ?></a></li>
+          <li class="category-list__item"><a><?= $term->name; ?></a></li>
           <?php endforeach; ?>
           <?php endif; ?>
         </ul>
