@@ -35,7 +35,7 @@ body {
   margin: 0 auto;
 }
 
-@media screen and  (max-width: $sp-max-width) {
+@media screen and (max-width: $sp-max-width) {
   .page-wrapper {
     flex-direction: column-reverse;
   }

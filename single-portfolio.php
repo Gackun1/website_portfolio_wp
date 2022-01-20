@@ -22,6 +22,8 @@
 $img_main = get_field('main');
 $img_pc = get_field('pc'); 
 $img_sp = get_field('sp'); 
+$button_link = get_field('button_link');
+$button_text = get_field('button_text');
 ?>
 
 <div class="edit-area">
@@ -39,6 +41,11 @@ $img_sp = get_field('sp');
   <?php endif; ?>
   
   <?php the_content(); ?>
+
+  <?php if(!empty($button_link) && !empty($button_text)) : ?>
+    <a href="<?= $button_link ?>" class="pure-btn btn-05-rounded center-btn" target="_blank"><?= $button_text ?></a>
+  <?php endif; ?>
+
 </div>
 <?php endwhile; ?>
 
